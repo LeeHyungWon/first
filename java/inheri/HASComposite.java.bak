@@ -1,0 +1,28 @@
+class Police {
+	Gun pistol;
+	int handcuff;
+	public Police(int num, int bcuff) {
+		handcuff = bcuff;
+		if (num > 0)	pistol = new Gun(num);
+		else			pistol = null;
+	}
+	public void putHandcuff() {
+		System.out.println("SNAP!!");
+		handcuff--;
+	}
+	public void shot() {
+		if (pistol == null) System.out.println("총이 없는데요??");
+		else				pistol.shot();
+	}
+}
+
+class HASComposite {
+	public static void main(String[] args) 	{
+		Police pman1 = new Police(5, 3);
+		pman1.shot();
+		pman1.putHandcuff();
+
+		Police pman2 = new Police(0, 3);
+		pman2.shot();
+	}
+}
